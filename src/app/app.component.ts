@@ -8,4 +8,4 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Character Select';
 }
-let reactiveVar = "This is a reactive variable";
+
