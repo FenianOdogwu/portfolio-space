@@ -7,11 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainPageComponent implements OnInit {
 
+  displayResponsibilites = false;
+
   constructor() {
+
   }
 
   ngOnInit(): void {
   }
 
-
+  showResponsibilities() {
+    this.displayResponsibilites = true;
+  }
 }
