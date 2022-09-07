@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
+import  { HttpClientModule } from '@angular/common/http';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -7,6 +10,7 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
 import { MainPageComponent } from './main-page/main-page.component';
 import { ProjectPageComponent } from './project-page/project-page.component';
 import { AboutPageComponent } from './about-page/about-page.component';
+import { EmailFormComponent } from './about-page/email-form/email-form.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +18,14 @@ import { AboutPageComponent } from './about-page/about-page.component';
     NavigationBarComponent,
     MainPageComponent,
     ProjectPageComponent,
-    AboutPageComponent
+    AboutPageComponent,
+    EmailFormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    ReactiveFormsModule,
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
