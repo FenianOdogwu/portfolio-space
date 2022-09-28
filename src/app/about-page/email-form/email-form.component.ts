@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms'; // import form modules
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'; // import form modules
 
 
 
@@ -13,14 +13,14 @@ export class EmailFormComponent implements OnInit {
 
 
   contactForm: FormGroup; // create a 'form group' object to manage each child controls
-  dest: string;
+  sent: boolean;
   constructor(private builder: FormBuilder, private http: HttpClient) { }
 
   ngOnInit(): void {
     this.contactForm = this.builder.group({
-      uname: ['', Validators.required],
-      subject: ['', Validators.required],
-      email: ['', Validators.email],
+      uname: new FormControl('', Validators.required),
+      subject: new FormControl('', Validators.required),
+      email:  new FormControl('',  [Validators.email, Validators.required]), //add multiple validators w/ array
       message: '',
     })
   }
@@ -31,7 +31,7 @@ export class EmailFormComponent implements OnInit {
     this.http.post('https://portfolio-backend-space-default-rtdb.europe-west1.firebasedatabase.app/.json', formData).subscribe(response => {
       console.log(response);
      });
-     console.log(formData);
-
+    this.sent = true;
+     console.log(formData, this.sent);
   }
 }
