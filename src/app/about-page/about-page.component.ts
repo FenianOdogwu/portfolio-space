@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/internal/Observable';
 
 
 interface AppState {
+  header: string;
   message: string;
 }
 
@@ -14,9 +15,10 @@ interface AppState {
 })
 export class AboutPageComponent implements OnInit {
 
+  header$: Observable<string>;
   message$: Observable<string>;
-
   constructor (private store: Store<AppState>) {
+  this.header$ = this.store.select('header');
   this.message$ = this.store.select('message'); // we're observing our appState here
 }
   ngOnInit(): void {

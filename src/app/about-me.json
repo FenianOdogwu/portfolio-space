@@ -1,4 +1,8 @@
 {
+  "header": {
+    "english": "About Me",
+    "german": "Über Mich"
+  },
   "message":
   {
     "english":  "I am a Front End developer with experience in working with current JavaScript frameworks, APIs and non-relational databases such as MongoDB. My main career goal is ultimately building a skill set and tech stack for Full Stack Development and advancement of my career. Driven and with an enjoyment of learning, I strive to deiliver the best performance while also seeking new ways to improve myself.",

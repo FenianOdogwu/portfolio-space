@@ -4,7 +4,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import  { HttpClientModule } from '@angular/common/http';
 
 import { StoreModule } from '@ngrx/store';
-import { simpleReducer } from './simple.reducer';
+import { aboutBodyReducer } from './about.reducer';
+import { aboutHeaderReducer } from './about.reducer';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -30,7 +31,8 @@ import { EmailFormComponent } from './about-page/email-form/email-form.component
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
-    StoreModule.forRoot({message: simpleReducer})
+    StoreModule.forRoot({message: aboutBodyReducer, header: aboutHeaderReducer}),
+
   ],
   providers: [],
   bootstrap: [AppComponent]

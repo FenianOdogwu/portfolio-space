@@ -1,11 +1,13 @@
-<button (click)="germanMessage()">Deutsch</button>
-<button (click)="englishMessage()">English</button>
+
 <div class="container">
 <div class="row">
 <div class="about-col col-6">
   <div class="about-col-text">
-    <h1>About Me</h1>
+    <h1>{{ header$ | async}}</h1>
       <p>{{ message$ | async }}</p>
+      <br>
+      <button class="btn btn-grey" (click)="germanMessage()">Deutsch</button>
+      <button class= "btn btn-grey" (click)="englishMessage()">English</button>
   </div>
 
 </div>
