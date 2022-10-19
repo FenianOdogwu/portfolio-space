@@ -18,7 +18,7 @@ export class EmailFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.contactForm = this.builder.group({
-      uname: new FormControl('', Validators.required),
+      name: new FormControl('', Validators.required),
       subject: new FormControl('', Validators.required),
       email:  new FormControl('',  [Validators.email, Validators.required]), //add multiple validators w/ array
       message: '',
@@ -26,12 +26,27 @@ export class EmailFormComponent implements OnInit {
   }
 
   submitContact() {
-    const formData = JSON.stringify(this.contactForm.value); // converts js object value into a json string
+    // const formData = JSON.stringify(this.contactForm.value); // converts js object value into a json string
 
-    this.http.post('https://portfolio-backend-space-default-rtdb.europe-west1.firebasedatabase.app/.json', formData).subscribe(response => {
+
+    // create object for the request body to parse
+    let emailContent = {
+      name: this.contactForm.controls['name'].value,
+      subject: this.contactForm.controls['subject'].value,
+      email: this.contactForm.controls['email'].value,
+      message: this.contactForm.controls['message'].value
+    }
+    console.log(emailContent);
+    
+    this.http.post('http://localhost:3000/send', emailContent, {responseType: 'text'}).subscribe(response => {
       console.log(response);
      });
-    this.sent = true;
-     console.log(formData, this.sent);
+     this.contactForm.reset();
+  }
+
+  sentHandler() {
+    if (this.sent = true) {
+        console.log('Email Sent!');
+    }
   }
 }

@@ -2,20 +2,20 @@
     Do you want to discuss further? Contact Me:
     <form [formGroup]="contactForm" (ngSubmit)="submitContact()">
       <div class="form-group">
-        <label for="uname">Name </label>
-        <input type="text" class="form-control" formControlName="uname" id="uname" aria-describedby="uname">
+        <label for="name">Name </label>
+        <input type="text" class="form-control" formControlName="name" name="name" id="uname" aria-describedby="name">
       </div>
 
       <div class="form-group">
         <label for="subject">Subject</label>
-        <input type="text" class="form-control" id="subject" required formControlName="subject" aria-describedby="subject">
+        <input type="text" class="form-control" id="subject" name="subject" required formControlName="subject" aria-describedby="subject">
       </div>
 
 
 
       <div class="form-group">
         <label for="email">Email </label>
-        <input type="email" class="form-control" id="email" required formControlName="email" aria-describedby="email">
+        <input type="email" class="form-control" id="email" name="email" required formControlName="email" aria-describedby="email">
         <small>Your email will not be shared with anyone else.</small>
         <br/>
       </div>
@@ -27,14 +27,15 @@
 
       <div class="form-group">
         <label for="mailMessage">Message</label>
-        <textarea class="form-control" formControlName="message" id="mailMessage"></textarea>
+        <textarea class="form-control" name="message" formControlName="message" id="mailMessage"></textarea>
       </div>
 
 
       <button type="submit" class="btn btn-primary mb-2" [disabled]="!contactForm.valid">Send Message</button>
     </form>
-
-    {{contactForm.value | json}}
+<!--{{contactForm.value | json}}
     <br/>
     Form Status: {{contactForm.status }}
+  -->
+
 

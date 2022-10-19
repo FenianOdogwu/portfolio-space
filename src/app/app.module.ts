@@ -31,7 +31,7 @@ import { EmailFormComponent } from './about-page/email-form/email-form.component
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
-    StoreModule.forRoot({message: aboutBodyReducer, header: aboutHeaderReducer}),
+    StoreModule.forRoot({ header: aboutHeaderReducer, message: aboutBodyReducer}),
 
   ],
   providers: [],

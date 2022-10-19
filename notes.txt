@@ -1,0 +1,4 @@
+# Making use of seperate node.JS app to handle emails
+# Using cors in Express, Nodemailer allows for cross origin resource sharing with Angular app (port 4200) and node app (port 3000)
+# Create a request body object in submission function for finalizing any input data.
+# response type = text on  http post  because by default Angular tries to parse the body of HTTP response as JSON.
